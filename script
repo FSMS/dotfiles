@@ -1,0 +1,5 @@
+#!/bin/sh
+DOT_DIR=$HOME/dotfiles
+ln -fs $DOT_DIR/.vimrc $HOME/.vimrc
+ln -fs $DOT_DIR/.zshrc $HOME/.zshrc
+
