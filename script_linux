@@ -13,3 +13,6 @@ echo "ln -fs $DOT_DIR/.zshrc $HOME/.zshrc"
 ln -fs $DOT_DIR/.bash_profile $HOME/.bash_profile
 echo "ln -fs $DOT_DIR/.bash_profile $HOME/.bash_profile"
 
+# tmux
+ln -fs $DOT_DIR/.tmux.conf $HOME/.tmux.conf
+echo "ln -fs $DOT_DIR/.tmux.conf $HOME/.tmux.conf"
