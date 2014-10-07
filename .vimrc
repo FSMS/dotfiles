@@ -6,9 +6,6 @@ set cmdheight=2		"コマンドラインの高さ
 
 
 
-
-
-
 """"""""""""""""""""""""""""""
 " 全角スペースの表示
 """"""""""""""""""""""""""""""
@@ -25,27 +22,6 @@ if has('syntax')
     call ZenkakuSpace()
 endif
 """"""""""""""""""""""""""""""
-
-
-
-"#########################################################################
-" NeoBundle
-"#########################################################################
-
-if has('vim_starting')
-  set nocompatible               " Be iMproved
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
 
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
 """"""""""""""""""""""""""""""
@@ -81,6 +57,28 @@ function! s:GetHighlight(hi)
   return hl
 endfunction
 """"""""""""""""""""""""""""""
+
+
+
+"#########################################################################
+" NeoBundle
+"#########################################################################
+
+
+if has('vim_starting')
+  set nocompatible               " Be iMproved
+
+  " Required:
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+" Required:
+call neobundle#begin(expand('~/.vim/bundle/'))
+
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
 
 
 
