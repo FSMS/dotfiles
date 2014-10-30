@@ -13,7 +13,7 @@ SAVEHIST=10000            # 保存されるヒストリの件数
 # 色の設定
 export LSCOLORS=Exfxcxdxbxegedabagacad
 # 補完時の色の設定
-export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;46'
 # ZLS_COLORSとは？
 export ZLS_COLORS=$LS_COLORS
 # lsコマンド時、自動で色がつく(ls -Gのようなもの？)
@@ -43,3 +43,5 @@ RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 setopt transient_rprompt # 最後の行だけ右プロンプト表示
+
+alias ls='ls --color=auto'
