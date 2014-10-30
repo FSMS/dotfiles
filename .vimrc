@@ -1,4 +1,4 @@
-set number		"行番号表示
+set nonumber		"行番号表示しない
 set noswapfile 		"スワップファイルは作らない
 set ruler		"ルーラーの表示
 set cmdheight=2		"コマンドラインの高さ
@@ -15,9 +15,9 @@ endfunction
 
 if has('syntax')
     augroup ZenkakuSpace
-        autocmd!
-        autocmd ColorScheme * call ZenkakuSpace()
-        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    autocmd!
+    autocmd ColorScheme * call ZenkakuSpace()
+    autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
     augroup END
     call ZenkakuSpace()
 endif
@@ -87,8 +87,23 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "#######################################
 
 
-" ファイルオープンを便利に
+" カラースキーマ
+" solarized
+NeoBundle 'altercation/vim-colors-solarized'
+" mustang
+NeoBundle 'croaker/mustang-vim'
+" jellybeans
+NeoBundle 'nanotech/jellybeans.vim'
+" molokai
+NeoBundle 'tomasr/molokai'
+" badwolf
+NeoBundle 'sjl/badwolf'
+" hybrid
+NeoBundle 'w0ng/vim-hybrid'
+
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
+
 " Unite.vimで最近使ったファイルを表示できるようにする
 NeoBundle 'Shougo/neomru.vim'
 " インデントに色を付けて見やすくする
@@ -118,3 +133,23 @@ filetype plugin indent on
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 "########################################################################
+"
+
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~
+" カラースキーマ
+"~~~~~~~~~~~~~~~~~~~~~~~~~~~
+colorscheme jellybeans
+if &term =~ "xterm-256color" || "screen-256color"
+  set t_Co=256
+  set t_Sf=[3%dm
+  set t_Sb=[4%dm
+elseif &term =~ "xterm-color"
+  set t_Co=8
+  set t_Sf=[3%dm
+  set t_Sb=[4%dm
+endif
+
+syntax enable
+hi PmenuSel cterm=reverse ctermfg=33 ctermbg=222 gui=reverse guifg=#3399ff guibg=#f0e68c
+
+
