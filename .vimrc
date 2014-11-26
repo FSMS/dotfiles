@@ -3,7 +3,9 @@ set noswapfile 		"スワップファイルは作らない
 set ruler		"ルーラーの表示
 set cmdheight=2		"コマンドラインの高さ
 
-
+set encoding=utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
 
 
 """"""""""""""""""""""""""""""
