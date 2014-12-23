@@ -55,4 +55,8 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
 
-alias ls='ls -G '
+if [[ $OSTYPE == 'linux-gnu' ]]; then
+   alias ls='ls --color=auto'
+elif [[ $OSTYPE == 'darwin12' ]]; then
+   alias ls='ls -G'
+fi
