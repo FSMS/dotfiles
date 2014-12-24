@@ -45,3 +45,5 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 setopt transient_rprompt # 最後の行だけ右プロンプト表示
 
 alias ls='ls --color=auto'
+
+
