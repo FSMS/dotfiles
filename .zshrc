@@ -24,7 +24,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # プロンプトに色を付ける
 autoload -U colors; colors
 # 一般ユーザ時
-tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
+tmp_prompt="%{${fg[cyan]}%}%n@%m%# %{${reset_color}%}"
 tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
 tmp_rprompt="%{${fg[green]}%}[%~]%{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
@@ -44,6 +44,21 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 setopt transient_rprompt # 最後の行だけ右プロンプト表示
 
-alias ls='ls --color=auto'
 
 
+# git リポジトリ表示
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+
+if [[ $OSTYPE == 'linux-gnu' ]]; then
+   alias ls='ls --color=auto'
+elif [[ $OSTYPE == 'darwin12' ]]; then
+   alias ls='ls -G'
+fi
