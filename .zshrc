@@ -47,17 +47,20 @@ setopt transient_rprompt # 最後の行だけ右プロンプト表示
 
 
 # git リポジトリ表示
-autoload -Uz vcs_info
-setopt prompt_subst
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
-zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
-zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
-zstyle ':vcs_info:*' actionformats '[%b|%a]'
-precmd () { vcs_info }
-RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+if [[ $OSTYPE != 'cygwin' ]]; then
+    autoload -Uz vcs_info
+    setopt prompt_subst
+    zstyle ':vcs_info:*' enable git
+    zstyle ':vcs_info:git:*' check-for-changes true
+    zstyle ':vcs_info:git:*' stagedstr "%F{yellow}!"
+    zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+    zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
+    zstyle ':vcs_info:*' actionformats '[%b|%a]'
+    precmd () { vcs_info }
+    RPROMPT=$RPROMPT'${vcs_info_msg_0_}'
+fi
 
-if [[ $OSTYPE == 'linux-gnu' ]]; then
+if [[ $OSTYPE == 'linux-gnu' || $OSTYPE == 'cygwin' ]]; then
    alias ls='ls --color=auto'
 elif [[ $OSTYPE == 'darwin12' ]]; then
    alias ls='ls -G'
