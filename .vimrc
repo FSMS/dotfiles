@@ -6,7 +6,7 @@ set cmdheight=2		"コマンドラインの高さ
 set encoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
-
+set backspace=indent,eol,start
 
 """"""""""""""""""""""""""""""
 " 全角スペースの表示
