@@ -44,7 +44,7 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 setopt transient_rprompt # 最後の行だけ右プロンプト表示
 
-
+alias vi='vim'
 
 # git リポジトリ表示
 if [[ $OSTYPE != 'cygwin' ]]; then
