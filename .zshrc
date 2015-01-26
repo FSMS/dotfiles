@@ -65,3 +65,5 @@ if [[ $OSTYPE == 'linux-gnu' || $OSTYPE == 'cygwin' ]]; then
 elif [[ $OSTYPE == 'darwin12' ]]; then
    alias ls='ls -G'
 fi
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
