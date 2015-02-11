@@ -9,6 +9,10 @@ HISTFILE=~/.zsh_history   # ヒストリを保存するファイル
 HISTSIZE=10000            # メモリに保存されるヒストリの件数
 SAVEHIST=10000            # 保存されるヒストリの件数
 
+## auto comp
+autoload -U compinit
+compinit
+
 ### Ls Color ###
 # 色の設定
 export LSCOLORS=Exfxcxdxbxegedabagacad
