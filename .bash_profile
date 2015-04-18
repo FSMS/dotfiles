@@ -126,3 +126,14 @@ alias gri='git rebase -i'
 #######################################
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
+
+export PATH=$PATH:~/Library/Python/2.7/bin
+
+
+
+if [[ $OSTYPE == 'linux-gnu' || $OSTYPE == 'cygwin' ]]; then
+    alias ls='ls --color=auto'
+elif [[ $OSTYPE == 'darwin14' ]]; then
+    alias ls='ls -G'
+    export LSCOLORS=gxfxcxdxbxegedabagacad
+fi
