@@ -24,3 +24,12 @@ cat /tmp/.tmux_to_pbcopy | pbcopy
 tmux display-message "Copied."
 ```
 
+## Powerline関連
+
+```
+brew install python
+pip install --user powerline-status
+pip install --user git+git://github.com/powerline/powerline
+git clone git@github.com:powerline/fonts.git
+brew install macvim --env-std --override-system-vim
+```
