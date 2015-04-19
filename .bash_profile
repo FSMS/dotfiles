@@ -120,6 +120,11 @@ alias gdh='git diff HEAD'
 alias gdu='git diff -U1000'
 alias gb='git branch -a'
 alias gri='git rebase -i'
+alias glu='git ls-files -u'
+alias grs='git rerere status'
+alias grd='git rerere diff'
+alias gcm='git commit -m'
+
 
 #######################################
 # go path
