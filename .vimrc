@@ -126,6 +126,10 @@ NeoBundle 'tpope/vim-fugitive'
 "" neocomplcache
 NeoBundle 'Shougo/neocomplcache'
 
+"" powerline
+"NeoBundle 'alpaca-tc/alpaca_powertabline'
+"NeoBundle 'https://github.com/Lokaltog/powerline.git'
+
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
 
@@ -198,9 +202,9 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 
 " Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+set rtp+=$HOME/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
 set laststatus=2
+set t_Co=256
 set showtabline=2
 set noshowmode
+

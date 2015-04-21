@@ -79,8 +79,8 @@ On_IWhite="\[\033[0;107m\]"   # White
 # Various variables you might want for your PS1 prompt instead
 Time12h="\T"
 Time12a="\@"
-PathShort="\w"
-PathFull="\W"
+PathShort="\W"
+PathFull="\w"
 NewLine="\n"
 Jobs="\j"
 
@@ -133,7 +133,7 @@ export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
 export PATH=$PATH:~/Library/Python/2.7/bin
-
+PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
 
 
 if [[ $OSTYPE == 'linux-gnu' || $OSTYPE == 'cygwin' ]]; then
