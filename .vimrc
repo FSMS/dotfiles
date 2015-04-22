@@ -126,9 +126,9 @@ NeoBundle 'tpope/vim-fugitive'
 "" neocomplcache
 NeoBundle 'Shougo/neocomplcache'
 
-"" powerline
-"NeoBundle 'alpaca-tc/alpaca_powertabline'
-"NeoBundle 'https://github.com/Lokaltog/powerline.git'
+" puppet
+NeoBundleLazy 'puppetlabs/puppet-syntax-vim', {
+  \ 'autoload': {'filetypes': ['puppet']}}
 
 " grep検索の実行後にQuickFix Listを表示する
 autocmd QuickFixCmdPost *grep* cwindow
