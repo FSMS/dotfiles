@@ -2,6 +2,7 @@ set nonumber		"行番号表示しない
 set noswapfile 		"スワップファイルは作らない
 set ruler		"ルーラーの表示
 set cmdheight=2		"コマンドラインの高さ
+set hlsearch
 
 set encoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
