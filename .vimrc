@@ -137,6 +137,19 @@ autocmd QuickFixCmdPost *grep* cwindow
 " ステータス行に現在のgitブランチを表示する
 set statusline+=%{fugitive#statusline()}
 
+
+" git plugin giti
+NeoBundle 'git://github.com/kmnk/vim-unite-giti.git'
+
+" echodoc
+NeoBundle 'Shougo/echodoc', '', 'default'
+call neobundle#config('echodoc', {
+      \ 'lazy' : 1,
+      \ 'autoload' : {
+      \ 'insert' : 1,
+      \ }})
+
+
 "######################################
 " Plugin end
 "######################################
