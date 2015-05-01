@@ -124,6 +124,8 @@ alias glu='git ls-files -u'
 alias grs='git rerere status'
 alias grd='git rerere diff'
 alias gcm='git commit -m'
+alias gbm='git branch -r --list --merged'
+alias gbnm='git branch -r --list --no-merged'
 
 
 #######################################
