@@ -84,7 +84,7 @@ PathFull="\w"
 NewLine="\n"
 Jobs="\j"
 
-export PS1="$Cyan\u@\h$Color_Off"'$(git branch &>/dev/null;\
+export PS1='$(git branch &>/dev/null;\
 if [ $? -eq 0 ]; then \
   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
   if [ "$?" -eq "0" ]; then \
@@ -118,7 +118,7 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 alias gdh='git diff HEAD'
 alias gdu='git diff -U1000'
-alias gb='git branch -a'
+alias gb='git branch -vv -a'
 alias gri='git rebase -i'
 alias glu='git ls-files -u'
 alias grs='git rerere status'
@@ -142,3 +142,13 @@ elif [[ $OSTYPE == 'darwin14' ]]; then
     alias ls='ls -G'
     export LSCOLORS=gxfxcxdxbxegedabagacad
 fi
+
+
+
+
+function awsssh(){
+  SSH_TARGET_HOST="$(aws ec2 describe-instances|jq -r '.Reservations[].Instances[].Tags[].Value'|peco)"
+  ssh -i ~/.ssh/"$( ls ~/.ssh/ |peco)" ec2-user@"$(aws ec2 describe-instances|jq -r --arg SSH_TARGET_HOST $SSH_TARGET_HOST '.Reservations[].Instances[]|select(.Tags[].Value == $SSH_TARGET_HOST )|.PrivateIpAddress'|peco)"
+}
+
+
