@@ -71,3 +71,31 @@ elif [[ $OSTYPE == 'darwin12' ]]; then
 fi
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+
+#######################################
+# alias for git
+#######################################
+
+alias gs='git status'
+alias gld='git log --decorate=full --oneline --graph'
+alias glp='git log -p --decorate=full --graph'
+alias gl='git log'
+alias gf='git fetch --all'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gap='git add -p'
+alias gai='git add -i'
+alias gd='git diff'
+alias gdc='git diff --cached'
+alias gdh='git diff HEAD'
+alias gdu='git diff -U1000'
+alias gb='git branch -vv -a'
+alias gri='git rebase -i'
+alias glu='git ls-files -u'
+alias grs='git rerere status'
+alias grd='git rerere diff'
+alias gcm='git commit -m'
+alias gbm='git branch -r --list --merged'
+alias gbnm='git branch -r --list --no-merged'
+

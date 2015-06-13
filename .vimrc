@@ -216,7 +216,12 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 
 " Powerline
-set rtp+=$HOME/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
+if has('unix')
+    set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim/
+endif
+if has('mac')
+    set rtp+=$HOME/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
+endif
 set laststatus=2
 set t_Co=256
 set showtabline=2
