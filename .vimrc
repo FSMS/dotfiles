@@ -139,7 +139,7 @@ set statusline+=%{fugitive#statusline()}
 
 
 " git plugin giti
-NeoBundle 'git://github.com/kmnk/vim-unite-giti.git'
+NeoBundle 'https://github.com/kmnk/vim-unite-giti.git'
 
 " echodoc
 NeoBundle 'Shougo/echodoc', '', 'default'
@@ -217,7 +217,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " Powerline
 if has('unix')
-    set rtp+=/usr/lib/python2.7/site-packages/powerline/bindings/vim/
+    set rtp+=~/.local/lib/python2.7/site-packages/powerline/bindings/vim/
 endif
 if has('mac')
     set rtp+=$HOME/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/

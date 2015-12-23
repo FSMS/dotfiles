@@ -1,3 +1,4 @@
+alias vi='vim'
 complete -C aws_completer aws
 
 if [[ $OSTYPE == 'darwin14' ]]; then
