@@ -1,12 +1,14 @@
 complete -C aws_completer aws
 
-source /usr/local/etc/bash_completion.d/git-prompt.sh
-source /usr/local/etc/bash_completion.d/git-completion.bash
-
 if [[ $OSTYPE == 'darwin14' ]]; then
+    source /usr/local/etc/bash_completion.d/git-prompt.sh
+    source /usr/local/etc/bash_completion.d/git-completion.bash
+
     if [ -f $(brew --prefix)/etc/bash_completion ]; then
       . $(brew --prefix)/etc/bash_completion
     fi
+else
+    . /usr/share/git-core/contrib/completion/git-prompt.sh
 fi
 
 Color_Off="\[\033[0m\]"       # Text Reset
