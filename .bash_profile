@@ -148,11 +148,10 @@ PS1="$PS1"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -
 
 if [[ $OSTYPE == 'linux-gnu' || $OSTYPE == 'cygwin' ]]; then
     alias ls='ls --color=auto'
-elif [[ $OSTYPE == 'darwin14' ]]; then
+elif [[ $OSTYPE == 'darwin15' ]]; then
     alias ls='ls -G'
     export LSCOLORS=gxfxcxdxbxegedabagacad
 fi
-
 
 
 
