@@ -160,4 +160,9 @@ function awsssh(){
   ssh -i ~/.ssh/"$( ls ~/.ssh/ |peco)" ec2-user@"$(aws ec2 describe-instances|jq -r --arg SSH_TARGET_HOST $SSH_TARGET_HOST '.Reservations[].Instances[]|select(.Tags[].Value == $SSH_TARGET_HOST )|.PrivateIpAddress'|peco)"
 }
 
+source ./.bash_profile.d/*
+
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
 
